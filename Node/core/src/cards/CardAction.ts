@@ -79,6 +79,10 @@ export class CardAction implements IIsCardAction {
     static openUrl(session: Session, url: string, title?: string|string[]): CardAction {
         return new CardAction(session).type('openUrl').value(url).title(title || "Click to open website in your browser");
     }
+
+    static openApp(session: Session, url: string, title?: string|string[]): CardAction {
+        return new CardAction(session).type('openApp').value(url).title(title || "Click to open website in a webview");
+    }
     
     static imBack(session: Session, msg: string, title?: string|string[]): CardAction {
         return new CardAction(session).type('imBack').value(msg).title(title || "Click to send response to bot");
